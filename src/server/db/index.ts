@@ -2,6 +2,7 @@ import "server-only";
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 import { getServerEnv } from "@/lib/env";
+import { authSchema } from "@/server/db/schema";
 
 export function createDatabase() {
   const { DATABASE_URL } = getServerEnv();
@@ -11,5 +12,5 @@ export function createDatabase() {
   }
 
   const client = postgres(DATABASE_URL, { prepare: false });
-  return drizzle(client);
+  return drizzle(client, { schema: authSchema });
 }

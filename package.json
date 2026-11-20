@@ -17,13 +17,16 @@
     "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\" \"*.{json,mjs,ts,yaml}\"",
     "test": "vitest run",
     "db:generate": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate"
+    "db:migrate": "drizzle-kit migrate",
+    "provision:owner": "tsx scripts/provision-owner.ts"
   },
   "dependencies": {
+    "@better-auth/drizzle-adapter": "1.7.22",
     "@tailwindcss/postcss": "^4.3.0",
+    "better-auth": "1.7.22",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "drizzle-orm": "0.44.7",
+    "drizzle-orm": "0.45.2",
     "lucide-react": "^0.468.0",
     "next": "^16.2.0",
     "postgres": "^3.4.7",
@@ -37,13 +40,16 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.16",
     "@next/eslint-plugin-next": "^16.4.3",
     "@types/node": "^24.10.0",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
+    "auth": "1.7.22",
     "drizzle-kit": "^0.31.6",
     "eslint": "^10.14.0",
     "prettier": "^3.6.2",
+    "tsx": "^4.23.15",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.72.1",
     "vitest": "^5.0.5"
